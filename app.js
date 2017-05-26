@@ -28,6 +28,28 @@ mongoose.connection.once('open', function(){
 // connect the db using mongoose
 var db = mongoose.connection;
 
+// get all genres document
+app.get('/api/genres', function(req, res){
+	Genre.getGenres(function(err, genres){
+		if(err){
+			throw err;
+		}
+		res.json(genres);
+	});
+});
+
+// post request, add genres document
+app.post('/api/genres', function(req, res){
+	// request body parser
+	var genre = req.body;
+	Genre.addGenre(genre, function(err, genre){
+		if(err){
+			throw err;
+		}
+		res.json(genre);
+	});
+});
+
 // creating route '/' for homepage
 app.get('/', function(req, res){
 	res.send("Hello World!");
