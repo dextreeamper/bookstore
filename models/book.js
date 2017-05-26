@@ -44,3 +44,10 @@ module.exports.getBooks = function(callback, limit){
 	// pass what comes to the parameters
 	Book.find(callback).limit(limit);
 }
+
+module.exports.getBookById = function(id, callback){
+	// pass what comes to the parameters
+	// findById a mongoose method
+	Book.findById(id, callback);
+}
+

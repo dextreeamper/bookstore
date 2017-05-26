@@ -72,6 +72,16 @@ app.get('/api/books', function(req, res){
 	});
 });
 
+// get the specific book by id
+app.get('/api/books/:_id', function(req, res){
+	Book.getBookById(req.params._id,function(err, book){
+		if(err){
+			throw err;
+		}
+		res.json(book);
+	});
+});
+
 // creating route '/' for homepage
 app.get('/', function(req, res){
 	res.send("Hello World!");
