@@ -62,6 +62,16 @@ app.put('/api/genres/:_id', function(req, res){
 	});
 });
 
+// get all books document
+app.get('/api/books', function(req, res){
+	Book.getBooks(function(err, books){
+		if(err){
+			throw err;
+		}
+		res.json(books);
+	});
+});
+
 // creating route '/' for homepage
 app.get('/', function(req, res){
 	res.send("Hello World!");
