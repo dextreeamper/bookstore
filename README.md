@@ -8,3 +8,28 @@ cd bookstore
 npm install
 node app or nodemon
 ```
+# Mongodb
+Create database bookstore
+```
+use bookstore
+```
+Create and show collection for our model(book and genre)
+```
+db.createCollection('book');
+db.createCollection('genre');
+show collections
+```
+Insert document to our collection genre and book
+```
+db.genres.insert({name:"Horror"});
+
+db.book.insert({
+	"title" : "Title of Book",
+	"genre" : "Suspense",
+	"description" : "This is a new description added by postman post request.",
+	"author" : "Author Sample",
+	"publisher" : "Publisher Sample",
+	"image_url" : "https://img.thriftbooks.com/api/images/l/33d0d22cc4da5edc668fecc9a7a9d3d6ed0ee443.jpg",
+	"buy_url" : "https://www.thriftbooks.com/w/ashes_laurie-halse-anderson/11433674/#isbn=1416961461",
+});
+```
