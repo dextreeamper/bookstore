@@ -82,6 +82,17 @@ app.get('/api/books/:_id', function(req, res){
 	});
 });
 
+// post request, add book
+app.post('/api/books', function(req, res){
+	var book = req.body;
+	Book.addBook(book, function(err, book){
+		if(err){
+			throw err;
+		}
+		res.json(book);
+	});
+});
+
 // creating route '/' for homepage
 app.get('/', function(req, res){
 	res.send("Hello World!");
