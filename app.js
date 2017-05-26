@@ -50,6 +50,18 @@ app.post('/api/genres', function(req, res){
 	});
 });
 
+// put request, update genres document
+app.put('/api/genres/:_id', function(req, res){
+	var id = req.params._id;
+	var genre = req.body;
+	Genre.updateGenre(id, genre, {}, function(err, genre){
+		if(err){
+			throw err;
+		}
+		res.json(genre);
+	});
+});
+
 // creating route '/' for homepage
 app.get('/', function(req, res){
 	res.send("Hello World!");

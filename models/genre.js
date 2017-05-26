@@ -32,3 +32,14 @@ module.exports.addGenre = function(genre, callback){
 	// pass what comes to the parameters
 	Genre.create(genre, callback);
 }
+
+// Update Genre
+module.exports.updateGenre = function(id, genre, options, callback){
+	// initialize the id and property name
+	var query = {_id: id};
+	var update = {
+		// assign the field
+		name: genre.name
+	}
+	Genre.findOneAndUpdate(query, update, options, genre, callback);
+}
