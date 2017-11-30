@@ -12,7 +12,7 @@
     "mongoose": "*",
     "nodemon": "^1.11.0"
   },
-  "author": "Dextree Lab",
+  "author": "Dexter Amper",
   "license": "ISC"
 }
 
