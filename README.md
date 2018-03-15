@@ -33,3 +33,12 @@ db.book.insert({
 	"buy_url" : "https://www.thriftbooks.com/w/ashes_laurie-halse-anderson/11433674/#isbn=1416961461",
 });
 ```
+# API's endpoint
+```
+Access these endpoints thru postman with 'GET', 'POST' and 'PUT' request
+localhost:3000/
+localhost:3000/api/genres
+localhost:3000/api/genres/:_id
+localhost:3000/api/books
+localhost:3000/api/books/:_id
+```
