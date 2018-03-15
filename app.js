@@ -95,7 +95,7 @@ app.post('/api/books', function(req, res){
 
 // creating route '/' for homepage
 app.get('/', function(req, res){
-	res.send("Hello World!");
+	res.send("Nodejs API is working!");
 });
 
 app.listen(3000);
